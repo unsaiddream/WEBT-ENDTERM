@@ -59,29 +59,42 @@
         <div class="container">
           <div class="row g-4">
             <div class="col-lg-8">
-              <form id="suggestion-form" class="panel">
+              <form id="suggestion-form" class="panel" novalidate>
                 <div class="row g-3">
                   <div class="col-md-6">
+                    <label class="form-label" for="name">Your name</label>
+                    <input class="form-control" id="name" name="name" type="text" maxlength="60" placeholder="Your name" required aria-describedby="name-error" />
+                    <p class="field-error" id="name-error"></p>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="email">Email</label>
+                    <input class="form-control" id="email" name="email" type="email" maxlength="120" placeholder="name@example.com" required aria-describedby="email-error" />
+                    <p class="field-error" id="email-error"></p>
+                  </div>
+                  <div class="col-md-6">
                     <label class="form-label" for="artist">Artist</label>
-                    <input
-                      class="form-control"
-                      id="artist"
-                      name="artist"
-                      required
-                      maxlength="100"
-                      placeholder="Artist name"
-                    />
+                    <input class="form-control" id="artist" name="artist" type="text" maxlength="100" placeholder="Artist name" required aria-describedby="artist-error" />
+                    <p class="field-error" id="artist-error"></p>
                   </div>
                   <div class="col-md-6">
                     <label class="form-label" for="city">City</label>
-                    <input
-                      class="form-control"
-                      id="city"
-                      name="city"
-                      required
-                      maxlength="100"
-                      placeholder="City and country"
-                    />
+                    <input class="form-control" id="city" name="city" type="text" maxlength="100" placeholder="City and country" required aria-describedby="city-error" />
+                    <p class="field-error" id="city-error"></p>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="genre">Genre</label>
+                    <select class="form-select" id="genre" name="genre" required aria-describedby="genre-error">
+                      <option value="">Choose a genre</option>
+                      <option>Pop</option><option>Hip-hop</option><option>Electronic</option>
+                      <option>Alternative</option><option>Jazz</option><option>Other</option>
+                    </select>
+                    <p class="field-error" id="genre-error"></p>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label" for="reason">Why do you recommend this artist?</label>
+                    <textarea class="form-control" id="reason" name="reason" rows="4" maxlength="500" required aria-describedby="reason-help reason-error"></textarea>
+                    <p id="reason-help" class="small text-muted-custom mt-1">10–500 characters. <span id="reason-count">0</span>/500</p>
+                    <p class="field-error" id="reason-error"></p>
                   </div>
                   <div class="col-12">
                     <button class="btn btn-primary" type="submit">Preview suggestion</button>
@@ -101,6 +114,6 @@
       </div>
     </footer>
     <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="assets/app.js?v=4"></script>
+    <script src="assets/contact.js"></script>
   </body>
 </html>
