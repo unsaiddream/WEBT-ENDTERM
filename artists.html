@@ -7,7 +7,7 @@
     <title>Artists | Music Map</title>
     <link href="assets/vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
 
-    <link href="assets/style.css?v=4" rel="stylesheet" />
+    <link href="assets/style.css?v=5" rel="stylesheet" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -57,65 +57,39 @@
       </section>
       <section class="section-sm pt-0">
         <div class="container">
-          <ul class="row g-4 list-unstyled">
-            <li class="col-md-6 col-xl-4 artist-column">
-              <article class="panel">
-                <p class="eyebrow">Seoul · South Korea</p>
-                <h3>BTS</h3>
-                <p class="text-muted-custom">Korean pop group.</p>
-                <span class="genre-pill">Pop</span>
-              </article>
-            </li>
-            <li class="col-md-6 col-xl-4 artist-column">
-              <article class="panel">
-                <p class="eyebrow">Berlin · Germany</p>
-                <h3>Paul Kalkbrenner</h3>
-                <p class="text-muted-custom">Electronic musician from Berlin.</p>
-                <span class="genre-pill">Electronic</span>
-              </article>
-            </li>
-            <li class="col-md-6 col-xl-4 artist-column">
-              <article class="panel">
-                <p class="eyebrow">New York · United States</p>
-                <h3>Nas</h3>
-                <p class="text-muted-custom">New York hip-hop artist.</p>
-                <span class="genre-pill">Hip-hop</span>
-              </article>
-            </li>
-            <li class="col-md-6 col-xl-4 artist-column">
-              <article class="panel">
-                <p class="eyebrow">Lagos · Nigeria</p>
-                <h3>Wizkid</h3>
-                <p class="text-muted-custom">Afrobeats artist from Lagos.</p>
-                <span class="genre-pill">Pop</span>
-              </article>
-            </li>
-            <li class="col-md-6 col-xl-4 artist-column">
-              <article class="panel">
-                <p class="eyebrow">Tokyo · Japan</p>
-                <h3>Yellow Magic Orchestra</h3>
-                <p class="text-muted-custom">Japanese electronic music group.</p>
-                <span class="genre-pill">Electronic</span>
-              </article>
-            </li>
-            <li class="col-md-6 col-xl-4 artist-column">
-              <article class="panel">
-                <p class="eyebrow">Almaty · Kazakhstan</p>
-                <h3>Unordinary Incident</h3>
-                <p class="text-muted-custom">Alternative artist from Almaty.</p>
-                <span class="genre-pill">Alternative</span>
-              </article>
-            </li>
-          </ul>
+          <form id="artist-filters" class="row g-3 mb-4" role="search">
+            <div class="col-md-6">
+              <label class="form-label" for="artist-search">Search artists</label>
+              <input class="form-control" type="search" id="artist-search" placeholder="Artist, city or genre" />
+            </div>
+            <div class="col-md-3">
+              <label class="form-label" for="city-filter">City</label>
+              <select class="form-select" id="city-filter"><option value="">All cities</option></select>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label" for="genre-filter">Genre</label>
+              <select class="form-select" id="genre-filter"><option value="">All genres</option></select>
+            </div>
+            <div class="col-12 filter-actions">
+              <label><input class="form-check-input me-2" type="checkbox" id="saved-only" />Saved artists only</label>
+              <button class="btn btn-outline-secondary btn-sm" type="reset">Clear filters</button>
+            </div>
+          </form>
+          <p id="artist-count" role="status" aria-live="polite"></p>
+          <ul id="artist-list" class="row g-4 list-unstyled"></ul>
+          <noscript><p>Enable JavaScript to search the artists. Artist examples are also listed on the Genres page.</p></noscript>
+          <p id="save-status" class="small text-muted-custom" role="status" aria-live="polite">Saved artists stay in this browser.</p>
         </div>
       </section>
     </main>
     <footer class="site-footer">
       <div class="container text-center text-md-start">
         <span>Music Map</span>
-        <span>Midterm project</span>
+        <span>Endterm project</span>
       </div>
     </footer>
     <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="assets/data.js"></script>
+    <script src="assets/app.js?v=5"></script>
   </body>
 </html>

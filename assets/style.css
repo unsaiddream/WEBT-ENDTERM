@@ -169,3 +169,16 @@ a {
 #form-status {
   color: var(--blue);
 }
+
+.filter-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
+}
