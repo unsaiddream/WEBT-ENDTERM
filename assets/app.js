@@ -109,6 +109,39 @@ function setupArtists() {
   renderArtists();
 }
 
+function setupMap() {
+  const map = document.querySelector(".map-picture");
+  if (!map) return;
+
+  for (const city of cities) {
+    const card = document.getElementById(city.id);
+    const link = createTextElement("a", "d-inline-block mt-3", `Artists from ${city.name}`);
+    link.href = `artists.html?city=${city.id}`;
+    card.append(link);
+    card.tabIndex = -1;
+  }
+
+  function selectCity(id, moveFocus) {
+    const city = getCity(id);
+    if (!city) return;
+    document.querySelectorAll(".city-card").forEach((card) => card.classList.toggle("selected-city", card.id === id));
+    map.querySelectorAll(".map-pin").forEach((pin) => {
+      if (pin.hash === `#${id}`) pin.setAttribute("aria-current", "location");
+      else pin.removeAttribute("aria-current");
+    });
+    document.querySelector("#map-status").textContent = `${city.name}, ${city.country}: ${city.genres.join(" and ")}.`;
+    if (moveFocus) document.getElementById(id).focus();
+  }
+
+  map.addEventListener("click", (event) => {
+    const pin = event.target.closest(".map-pin");
+    if (pin) selectCity(pin.hash.slice(1), true);
+  });
+  window.addEventListener("hashchange", () => selectCity(window.location.hash.slice(1), false));
+  selectCity(window.location.hash.slice(1), false);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   setupArtists();
+  setupMap();
 });

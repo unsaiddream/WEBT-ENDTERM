@@ -58,6 +58,11 @@
       <section class="section-sm pt-0">
         <div class="container">
           <div class="section-heading"><h2>Genre comparison</h2></div>
+          <div class="mb-3">
+            <label for="genre-search" class="form-label">Find a city or genre</label>
+            <input id="genre-search" class="form-control" type="search" placeholder="Try electronic or Almaty" />
+          </div>
+          <p id="genre-count" role="status" aria-live="polite">6 cities</p>
           <div class="table-responsive">
             <table class="table table-hover align-middle mb-0">
               <caption class="visually-hidden">
@@ -113,6 +118,23 @@
           </div>
           <p class="text-muted-custom small mt-3">These are examples, not a complete list.</p>
           <a class="btn btn-primary mt-3" href="map.html">Open the map</a>
+          <div class="listening-notes mt-4">
+            <h2 class="h4">Where to start</h2>
+            <div class="listening-note">
+              <h3 class="h6"><button class="btn btn-link px-0" type="button" aria-expanded="false" aria-controls="electronic-notes">Electronic music</button></h3>
+              <div id="electronic-notes" hidden>
+                <p>Try Rydeen by Yellow Magic Orchestra for Tokyo, then Sky and Sand by Paul Kalkbrenner for Berlin.</p>
+                <a href="artists.html">Find these artists</a>
+              </div>
+            </div>
+            <div class="listening-note">
+              <h3 class="h6"><button class="btn btn-link px-0" type="button" aria-expanded="false" aria-controls="pop-notes">Pop and hip-hop</button></h3>
+              <div id="pop-notes" hidden>
+                <p>Start with Spring Day by BTS, Essence by Wizkid, or The World Is Yours by Nas.</p>
+                <a href="artists.html">Browse the artist list</a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -123,6 +145,8 @@
       </div>
     </footer>
     <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/genres.js"></script>
     <script src="assets/data.js"></script>
     <script src="assets/app.js?v=5"></script>
   </body>

@@ -182,3 +182,22 @@ a:focus-visible {
   outline: 3px solid var(--blue);
   outline-offset: 3px;
 }
+
+.selected-city {
+  border-color: var(--blue);
+  background: #f5f7fb;
+}
+
+.map-pin[aria-current="location"] {
+  background: #174bb7;
+  outline: 3px solid var(--blue);
+}
+
+.listening-note {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
+}
+
+.listening-note > div {
+  max-width: 650px;
+}
